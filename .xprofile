@@ -5,28 +5,12 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 
-# zsh config dir
-export ZDOTDIR=$HOME/.config/zsh
-
-nitrogen --restore &
-
-systemctl --user start redshift
-
-autostart="clipit alacritty firefox"
-
-for program in $autostart; do
-	pidof -s "$program" || setsid -f "$program"
-done >/dev/null 2>&1
-
 # Ensure that xrdb has finished running before moving on to start the WM/DE.
 [ -n "$xrdbpid" ] && wait "$xrdbpid"
 
 export PATH=$PATH:$HOME/.local/bin
 
-dwmblocks &
+# Speedy keys
+# xset r rate 300 50
 
-sxhkd &
-
-xset r rate 300 50
-
-xmodmap ~/.xmodmap
+dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP

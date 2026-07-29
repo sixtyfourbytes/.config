@@ -1,5 +1,0 @@
-#!/bin/sh
-
-clock=$(TZ='Asia/Kolkata' date "+%H:%M | %d - %a")
-
-notify-send -t 3000 "ﲊ ${clock}"

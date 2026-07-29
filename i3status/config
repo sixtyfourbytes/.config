@@ -1,0 +1,75 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+    colors = true
+    interval = 5
+	color_bad = "#e76f51"
+	color_good = "#90e0ef"
+	color_degraded = "#e9c46a"
+}
+
+order += "battery all"
+order += "volume master"
+order += "memory"
+order += "disk /"
+order += "load"
+order += "tztime calcutta"
+order += "wireless wlp4s0"
+order += "ethernet enp0s31f6"
+
+wireless wlp4s0 {
+        format_up = " %quality %essid - %ip"
+        format_down = "  Down"
+}
+
+ethernet enp0s31f6 {
+        format_up = "󰈀 %ip (%speed)"
+        format_down = "󰈀 Down"
+}
+
+battery all {
+        format = "%status %percentage %remaining"
+	format_percentage = "%1.0f%s"
+	last_full_capacity = true
+	format_down = "No battery"
+        status_chr = " "
+        status_bat = "󰚦 "
+        status_unk = "?"
+        status_full = " "
+        status_idle = "IDLE"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 20
+	threshold_type = percentage
+}
+
+tztime calcutta {
+        format = "󰸗 %m-%d 󱑁 %H:%M"
+        timezone = "Asia/Dubai"
+        # hide_if_equals_localtime = true
+}
+
+load {
+        format = " %1min"
+}
+
+memory {
+	format = "󰍛 %used"
+}
+
+disk "/" {
+        format = "󰑹 %avail"
+}
+
+volume master {
+        format = "󰽴 %volume"
+        format_muted = "󰽳 muted (%volume)"
+	device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}

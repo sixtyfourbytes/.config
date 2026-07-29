@@ -1,0 +1,7 @@
+
+[Default Applications]
+application/x-bittorrent=tixati.desktop
+x-scheme-handler/magnet=tixati.desktop
+x-scheme-handler/dsc=tixati.desktop
+application/x-magnet=tixati.desktop
+x-scheme-handler/jetbrains=jetbrainsd.desktop

@@ -1,0 +1,6 @@
+[submodule "nvim"]
+	path = nvim
+	url = https://github.com/NvChad/NvChad
+[submodule "st"]
+	path = st
+	url = https://github.com/lukesmithxyz/st

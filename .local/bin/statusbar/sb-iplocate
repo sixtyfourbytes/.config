@@ -1,3 +1,0 @@
-#!/bin/sh
-
-echo "$(curl ifconfig.co/country 2>/dev/null)"
