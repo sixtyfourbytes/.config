@@ -7,11 +7,11 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
-    colors = true
-    interval = 5
-	color_bad = "#e76f51"
-	color_good = "#90e0ef"
-	color_degraded = "#e9c46a"
+        colors = true
+        interval = 5
+        color_bad = "#e76f51"
+        color_good = "#90e0ef"
+        color_degraded = "#e9c46a"
 }
 
 order += "battery all"
@@ -20,10 +20,10 @@ order += "memory"
 order += "disk /"
 order += "load"
 order += "tztime calcutta"
-order += "wireless wlp4s0"
+order += "wireless wlan0"
 order += "ethernet enp0s31f6"
 
-wireless wlp4s0 {
+wireless wlan0 {
         format_up = " %quality %essid - %ip"
         format_down = "  Down"
 }
@@ -35,9 +35,9 @@ ethernet enp0s31f6 {
 
 battery all {
         format = "%status %percentage %remaining"
-	format_percentage = "%1.0f%s"
-	last_full_capacity = true
-	format_down = "No battery"
+        format_percentage = "%1.0f%s"
+        last_full_capacity = true
+        format_down = "No battery"
         status_chr = " "
         status_bat = "󰚦 "
         status_unk = "?"
@@ -45,7 +45,7 @@ battery all {
         status_idle = "IDLE"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 20
-	threshold_type = percentage
+        threshold_type = percentage
 }
 
 tztime calcutta {
@@ -59,7 +59,7 @@ load {
 }
 
 memory {
-	format = "󰍛 %used"
+    	format = "󰍛 %used"
 }
 
 disk "/" {
@@ -69,7 +69,7 @@ disk "/" {
 volume master {
         format = "󰽴 %volume"
         format_muted = "󰽳 muted (%volume)"
-	device = "default"
+    	device = "default"
         mixer = "Master"
         mixer_idx = 0
 }
